@@ -1,0 +1,9 @@
+{
+    "project_name": "super-web-app",
+    "version": "1.0.4",
+    "external_port": 8081,
+    "docker_user": "artemprys",
+    "remote_host": "35.180.192.71",
+    "remote_user": "ubuntu",
+    "ssh_key_path": "C:/Users/artem/Desktop/work files/AWS_SERVER_STUFF/keys/aws-paris-key.pem"
+}
