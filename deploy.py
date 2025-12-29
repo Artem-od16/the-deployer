@@ -13,7 +13,13 @@ if sys.platform == "win32":
 
 def load_config():
     with open("config.json", "r") as f:
-        return json.load(f)
+        config = json.load(f)
+    
+    # Если запущен в GitHub Actions, берем путь к ключу из переменной окружения
+    if os.getenv("SSH_KEY_PATH"):
+        config["ssh_key_path"] = os.getenv("SSH_KEY_PATH")
+        
+    return config
 
 def remote_execute(config, command):
     host = config["remote_host"]
@@ -60,7 +66,6 @@ def build_and_push_image(config):
         return False
 
 def verify_deployment(url, attempts=5):
-    """ Проверяет, отвечает ли сайт кодом 200 """
     print(f"--- 4. Verifying Deployment at {url} ---")
     for i in range(attempts):
         try:
@@ -103,7 +108,6 @@ def run_system_remote(config):
         )
         remote_execute(config, proxy_cmd)
         
-        # Запускаем проверку
         site_url = f"http://{config['remote_host']}:{port}"
         if verify_deployment(site_url):
             print(f"🚀 DEPLOYED SUCCESSFULLY! {site_url}")
@@ -122,9 +126,7 @@ if __name__ == "__main__":
         res = remote_execute(config, "docker logs my-proxy-server")
         print(res.stdout)
     else:
-        # Увеличим версию для теста
         print(f"Starting Deployer for {config['project_name']} v.{config['version']}")
-        
         if build_and_push_image(config):
             setup_remote_network("deployer-network", config)
             run_system_remote(config)

@@ -1,0 +1,37 @@
+name: CI/CD Auto-Deploy
+
+on:
+  push:
+    branches: [ main ]  # Скрипт сработает, когда ты сделаешь git push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Install dependencies
+        run: pip install paramiko
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Run Deploy Script
+        run: python deploy.py
+        env:
+          SSH_KEY_PATH: /home/runner/.ssh/id_rsa
