@@ -2,7 +2,7 @@ name: CI/CD Auto-Deploy
 
 on:
   push:
-    branches: [ main ]  # Скрипт сработает, когда ты сделаешь git push
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -22,8 +22,17 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Install dependencies
-        run: pip install paramiko
+      - name: Create Config File
+        run: |
+          echo '{
+            "remote_host": "35.180.192.71",
+            "remote_user": "ubuntu",
+            "ssh_key_path": "/home/runner/.ssh/id_rsa",
+            "docker_user": "artemprys",
+            "project_name": "my-web-app",
+            "version": "1.0",
+            "external_port": 80
+          }' > config.json
 
       - name: Setup SSH Key
         run: |
