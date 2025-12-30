@@ -1,0 +1,9 @@
+# Ignore local build artifacts and caches
+build/
+dist/
+node_modules/
+__pycache__/
+.git/
+terraform/
+*.pem
+config.json
