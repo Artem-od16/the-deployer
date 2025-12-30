@@ -66,4 +66,9 @@ Access Control: Remote server access is managed through secure .pem key pairs vi
 
 Clean Repository: All temporary artifacts, cache files, and Terraform state files are ignored via a comprehensive .gitignore.
 
+
+
+
+[Full Project Roadmap can be found here](./ROADMAP.md)
+
 Author: Artem Prysiazhnyi
