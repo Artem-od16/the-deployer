@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artem Prysiazhnyi | DevOps Project</title>
+    <title>Artem Prysiazhnyi | DevOps Portfolio</title>
     <style>
-        /* Modern reset and layout */
         body { 
             background-color: #f4f7f9; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -14,58 +13,94 @@
             align-items: center; 
             min-height: 100vh; 
             margin: 0;
+            padding: 20px;
         }
-        /* Main container for project info */
         .card { 
             background: white; 
-            padding: 2.5rem; 
+            padding: 2rem; 
             border-radius: 16px; 
             box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
             text-align: center;
-            max-width: 450px;
-            width: 90%;
+            max-width: 900px;
+            width: 100%;
         }
         h1 { color: #1a73e8; margin-bottom: 0.5rem; }
         .status { color: #28a745; font-weight: bold; margin-bottom: 1.5rem; }
         
-        /* Navigation and social links */
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .video-item p {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        video {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: #000;
+        }
+
         .links { 
             display: flex; 
-            flex-direction: column; 
-            gap: 12px; 
+            justify-content: center;
+            gap: 15px; 
             margin-top: 2rem; 
         }
         .btn {
             text-decoration: none;
-            padding: 12px;
+            padding: 12px 20px;
             border-radius: 8px;
             font-weight: 600;
-            transition: transform 0.2s, background 0.2s;
+            transition: transform 0.2s;
+            color: white;
         }
-        .btn-github { background: #24292e; color: white; }
-        .btn-linkedin { background: #0077b5; color: white; }
-        .btn-telegram { background: #0088cc; color: white; }
-        
+        .btn-github { background: #24292e; }
+        .btn-linkedin { background: #0077b5; }
+        .btn-telegram { background: #0088cc; }
         .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+        @media (max-width: 768px) {
+            .video-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>🚀DEPLOYER PROJECT</h1>
-        <div class="status">Successfully deployed via Python & Terraform</div>
+        <h1>🚀 DEVOPS PROJECTS DEMO</h1>
+        <div class="status">Automated CI/CD Pipeline & Monitoring System</div>
         
-        <p>This page serves as live proof of an automated CI/CD pipeline running on AWS EC2.</p>
+        <p>Live demonstration of automated infrastructure on AWS EC2.</p>
+
+        <div class="video-grid">
+            <div class="video-item">
+                <p>Project 1: The Deployer</p>
+                <video controls>
+                    <source src="The-Deployer presentation.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-item">
+                <p>Project 2: The Watchtower</p>
+                <video controls>
+                    <source src="The-Watchtower presentation.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
 
         <div class="links">
-            <a href="https://github.com/Artem-od16/the-deployer" target="_blank" class="btn btn-github">
-                📁 View Source on GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/artem-prysiazhnyi/" target="_blank" class="btn btn-linkedin">
-                🔗 Connect on LinkedIn
-            </a>
-            <a href="https://t.me/Im16Art" target="_blank" class="btn btn-telegram">
-                ✈️ Contact via Telegram
-            </a>
+            <a href="https://github.com/Artem-od16/the-deployer" target="_blank" class="btn btn-github">GitHub</a>
+            <a href="https://www.linkedin.com/in/artem-prysiazhnyi/" target="_blank" class="btn btn-linkedin">LinkedIn</a>
+            <a href="https://t.me/Im16Art" target="_blank" class="btn btn-telegram">Telegram</a>
         </div>
     </div>
 </body>
