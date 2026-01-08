@@ -1,0 +1,11 @@
+{
+    "project_name": "your-app-name",
+    "version": "1.0.0",
+    "external_port": 8081,
+    "docker_user": "your-docker-username",
+    "remote_host": "0.0.0.0",
+    "remote_user": "ubuntu",
+    "ssh_key_path": "your-key.pem",
+    "telegram_token": "YOUR_BOT_TOKEN",
+    "telegram_chat_id": "YOUR_CHAT_ID"
+}
