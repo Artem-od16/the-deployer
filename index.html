@@ -6,7 +6,8 @@
     <title>Artem Prysiazhnyi | DevOps Portfolio</title>
     <style>
         body { 
-            background-color: #f4f7f9; 
+            /* Темно-зеленый глубокий фон */
+            background-color: #0d1b1e; 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             display: flex; 
             justify-content: center; 
@@ -17,68 +18,90 @@
         }
         .card { 
             background: white; 
-            padding: 2rem; 
-            border-radius: 16px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            padding: 2.5rem; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 45px rgba(0,0,0,0.3); 
             text-align: center;
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
         }
-        h1 { color: #1a73e8; margin-bottom: 0.5rem; }
-        .status { color: #28a745; font-weight: bold; margin-bottom: 1.5rem; }
+        h1 { color: #1a73e8; margin-bottom: 0.5rem; font-size: 2.2rem; }
+        .status { 
+            color: #28a745; 
+            font-weight: bold; 
+            margin-bottom: 1.5rem; 
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
         
         .video-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin: 20px 0;
+            gap: 25px;
+            margin: 30px 0;
+        }
+        .video-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #e1e4e8;
         }
         .video-item p {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #555;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #333;
+            font-size: 1.1rem;
         }
         video {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             background: #000;
         }
 
         .links { 
             display: flex; 
             justify-content: center;
-            gap: 15px; 
-            margin-top: 2rem; 
+            gap: 20px; 
+            margin-top: 2.5rem; 
+            flex-wrap: wrap;
         }
+        /* Увеличенные кнопки */
         .btn {
             text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: transform 0.2s;
+            padding: 16px 35px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
             color: white;
+            display: inline-flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
         .btn-github { background: #24292e; }
         .btn-linkedin { background: #0077b5; }
         .btn-telegram { background: #0088cc; }
-        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        
+        .btn:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+            opacity: 0.95;
+        }
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             .video-grid { grid-template-columns: 1fr; }
+            .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>🚀 DEVOPS PROJECTS DEMO</h1>
-        <div class="status">Automated CI/CD Pipeline & Monitoring System</div>
+        <div class="status">● Automated CI/CD Pipeline & Monitoring System</div>
         
-        <p>Live demonstration of automated infrastructure on AWS EC2.</p>
+        <p style="color: #666; font-size: 1.1rem;">Full-cycle infrastructure automation on AWS EC2 environment.</p>
 
         <div class="video-grid">
             <div class="video-item">
@@ -98,9 +121,15 @@
         </div>
 
         <div class="links">
-            <a href="https://github.com/Artem-od16/the-deployer" target="_blank" class="btn btn-github">GitHub</a>
-            <a href="https://www.linkedin.com/in/artem-prysiazhnyi/" target="_blank" class="btn btn-linkedin">LinkedIn</a>
-            <a href="https://t.me/Im16Art" target="_blank" class="btn btn-telegram">Telegram</a>
+            <a href="https://github.com/Artem-od16/the-deployer" target="_blank" class="btn btn-github">
+                GitHub Repository
+            </a>
+            <a href="https://www.linkedin.com/in/artem-prysiazhnyi/" target="_blank" class="btn btn-linkedin">
+                LinkedIn Profile
+            </a>
+            <a href="https://t.me/Im16Art" target="_blank" class="btn btn-telegram">
+                Contact via Telegram
+            </a>
         </div>
     </div>
 </body>
