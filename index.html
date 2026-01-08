@@ -5,122 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artem Prysiazhnyi | DevOps Portfolio</title>
     <style>
+        :root {
+            /* Forest green palette */
+            --bg-deep: #050d0c;
+            --card-bg: #0b1a18;
+            --accent-green: #2ecc71;
+            --forest-light: #1e3d37;
+            --text-main: #e0e0e0;
+            --text-dim: #8b949e;
+        }
+
         body { 
-            /* Deep dark-green background */
-            background-color: #0a1412; 
+            background-color: var(--bg-deep); 
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             min-height: 100vh; 
             margin: 0;
-            padding: 20px;
-            color: #e0e0e0;
+            padding: 40px 20px;
+            color: var(--text-main);
         }
         
         .card { 
-            /* Dark anthracite card container */
-            background: #161b22; 
-            padding: 2.5rem; 
+            background: var(--card-bg); 
+            padding: 3rem; 
             border-radius: 24px; 
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6); 
             text-align: center;
             max-width: 1100px;
             width: 100%;
-            border: 1px solid #30363d;
+            border: 1px solid var(--forest-light);
+        }
+
+        .header-section {
+            margin-bottom: 2.5rem;
         }
 
         h1 { 
-            color: #58a6ff; 
-            margin-bottom: 0.5rem; 
-            font-size: 2.5rem;
+            color: white; 
+            margin: 0;
+            font-size: 2.8rem;
             letter-spacing: -1px;
         }
 
-        .status { 
-            /* Neon green accent for system status */
-            color: #39ff14; 
-            font-weight: 800; 
-            margin-bottom: 1.5rem; 
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
-        }
-        
-        .description {
-            color: #8b949e;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .name-tag {
+            font-size: 1.4rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-top: 5px;
+            display: block;
         }
 
+        /* Top navigation links */
+        .links { 
+            display: flex; 
+            justify-content: center;
+            gap: 15px; 
+            margin: 2rem 0 3rem 0; 
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            background: var(--forest-light);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn:hover { 
+            background: var(--accent-green);
+            color: #050d0c;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.2);
+        }
+
+        .separator {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--forest-light), transparent);
+            margin: 2rem 0;
+        }
+
+        /* Videos section below links */
         .video-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-            margin: 30px 0;
         }
 
         .video-item {
-            /* Secondary dark background for video blocks */
-            background: #0d1117;
+            background: rgba(0,0,0,0.2);
             padding: 20px;
             border-radius: 16px;
-            border: 1px solid #30363d;
-            transition: border-color 0.3s;
-        }
-
-        .video-item:hover {
-            border-color: #58a6ff;
+            border: 1px solid var(--forest-light);
         }
 
         .video-item p {
             font-weight: 600;
             margin-bottom: 15px;
-            color: #c9d1d9;
-            font-size: 1.2rem;
+            color: var(--text-main);
+            font-size: 1.1rem;
         }
 
         video {
             width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
             background: #000;
-            outline: none;
-        }
-
-        .links { 
-            display: flex; 
-            justify-content: center;
-            gap: 20px; 
-            margin-top: 3rem; 
-            flex-wrap: wrap;
-        }
-
-        /* Large prominent buttons */
-        .btn {
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: 14px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .btn-github { background: #21262d; }
-        .btn-linkedin { background: #0077b5; }
-        .btn-telegram { background: #0088cc; }
-        
-        .btn-github:hover { background: #30363d; }
-
-        .btn:hover { 
-            transform: translateY(-5px) scale(1.02); 
-            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
-            border-color: rgba(255,255,255,0.3);
         }
 
         @media (max-width: 900px) {
@@ -132,38 +130,44 @@
 </head>
 <body>
     <div class="card">
-        <h1>🚀 DEVOPS PROJECTS DEMO</h1>
-        <div class="status">● System Online & Automated</div>
+        <div class="header-section">
+            <h1>DevOps Infrastructure Demo</h1>
+            <span class="name-tag">Artem Prysiazhnyi</span>
+        </div>
+
+        <div class="links">
+            <a href="https://github.com/Artem-od16/the-deployer" target="_blank" class="btn">
+                GitHub Repository
+            </a>
+            <a href="https://www.linkedin.com/in/artem-prysiazhnyi/" target="_blank" class="btn">
+                LinkedIn Profile
+            </a>
+            <a href="https://t.me/Im16Art" target="_blank" class="btn">
+                Telegram Contact
+            </a>
+        </div>
+
+        <div class="separator"></div>
         
-        <p class="description">Live demonstration of high-availability infrastructure on AWS EC2.</p>
+        <p style="color: var(--text-dim); margin-bottom: 2rem;">
+            Showcasing production-ready automation using AWS, Docker, and GitHub Actions.
+        </p>
 
         <div class="video-grid">
             <div class="video-item">
-                <p>Project 1: The Deployer</p>
+                <p>Project: The Deployer</p>
                 <video controls>
                     <source src="The-Deployer presentation.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
             <div class="video-item">
-                <p>Project 2: The Watchtower</p>
+                <p>Project: The Watchtower</p>
                 <video controls>
                     <source src="The-Watchtower presentation.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
-        </div>
-
-        <div class="links">
-            <a href="https://github.com/Artem-od16/the-deployer" target="_blank" class="btn btn-github">
-                GitHub Codebase
-            </a>
-            <a href="https://www.linkedin.com/in/artem-prysiazhnyi/" target="_blank" class="btn btn-linkedin">
-                Professional LinkedIn
-            </a>
-            <a href="https://t.me/Im16Art" target="_blank" class="btn btn-telegram">
-                Message on Telegram
-            </a>
         </div>
     </div>
 </body>
