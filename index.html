@@ -6,167 +6,188 @@
     <title>Artem Prysiazhnyi | DevOps Portfolio</title>
     <style>
         :root {
-            /* Forest green palette */
-            --bg-deep: #050d0c;
-            --card-bg: #0b1a18;
-            --accent-green: #2ecc71;
-            --forest-light: #1e3d37;
-            --text-main: #e0e0e0;
-            --text-dim: #8b949e;
+            /* Deep Forest Palette - No pure white, no bright greens */
+            --bg-base: #040a09;
+            --card-bg: #0a1614;
+            --forest-border: #1a2e2a;
+            --accent-muted: #27ae60; /* Darker, professional green */
+            --text-silver: #a0a8a7;
+            --text-dark-gray: #6b7675;
+            --btn-idle: #142623;
         }
 
         body { 
-            background-color: var(--bg-deep); 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: var(--bg-base); 
+            font-family: 'Inter', 'Segoe UI', sans-serif; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
             min-height: 100vh; 
             margin: 0;
-            padding: 40px 20px;
-            color: var(--text-main);
+            padding: 50px 20px;
+            color: var(--text-silver);
         }
         
         .card { 
             background: var(--card-bg); 
-            padding: 3rem; 
-            border-radius: 24px; 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.6); 
+            padding: 3.5rem; 
+            border-radius: 20px; 
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8); 
             text-align: center;
-            max-width: 1100px;
+            max-width: 1050px;
             width: 100%;
-            border: 1px solid var(--forest-light);
+            border: 1px solid var(--forest-border);
         }
 
-        .header-section {
-            margin-bottom: 2.5rem;
-        }
+        .header-section { margin-bottom: 3rem; }
 
         h1 { 
-            color: white; 
+            color: var(--text-silver); 
             margin: 0;
-            font-size: 2.8rem;
-            letter-spacing: -1px;
+            font-size: 2.4rem;
+            letter-spacing: -0.5px;
+            font-weight: 500;
         }
 
         .name-tag {
-            font-size: 1.4rem;
-            color: var(--accent-green);
-            font-weight: 600;
-            margin-top: 5px;
+            font-size: 1.2rem;
+            color: var(--accent-muted);
+            margin-top: 8px;
             display: block;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
 
-        /* Top navigation links */
         .links { 
             display: flex; 
             justify-content: center;
             gap: 15px; 
-            margin: 2rem 0 3rem 0; 
+            margin-bottom: 3.5rem; 
             flex-wrap: wrap;
         }
 
         .btn {
             text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            color: white;
-            display: inline-flex;
-            align-items: center;
-            background: var(--forest-light);
-            border: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.4s ease;
+            color: var(--text-silver);
+            background: var(--btn-idle);
+            border: 1px solid var(--forest-border);
         }
 
         .btn:hover { 
-            background: var(--accent-green);
-            color: #050d0c;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(46, 204, 113, 0.2);
+            border-color: var(--accent-muted);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.1);
         }
 
-        .separator {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--forest-light), transparent);
-            margin: 2rem 0;
-        }
-
-        /* Videos section below links */
         .video-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 40px;
         }
 
         .video-item {
-            background: rgba(0,0,0,0.2);
-            padding: 20px;
-            border-radius: 16px;
-            border: 1px solid var(--forest-light);
+            text-align: left;
         }
 
-        .video-item p {
+        .video-title {
             font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-main);
+            margin-bottom: 12px;
+            color: var(--text-silver);
             font-size: 1.1rem;
+            display: block;
+            border-left: 3px solid var(--accent-muted);
+            padding-left: 10px;
         }
 
         video {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border-radius: 12px;
             background: #000;
+            border: 1px solid var(--forest-border);
+            margin-bottom: 15px;
+        }
+
+        /* Tech Stack List */
+        .tech-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            font-size: 0.75rem;
+            background: rgba(39, 174, 96, 0.05);
+            color: var(--text-dark-gray);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--forest-border);
+            transition: 0.3s;
+        }
+
+        .tech-tag:hover {
+            color: var(--accent-muted);
+            border-color: var(--accent-muted);
         }
 
         @media (max-width: 900px) {
             .video-grid { grid-template-columns: 1fr; }
             .btn { width: 100%; justify-content: center; }
-            h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
     <div class="card">
         <div class="header-section">
-            <h1>DevOps Infrastructure Demo</h1>
+            <h1>Infrastructure & Automation</h1>
             <span class="name-tag">Artem Prysiazhnyi</span>
         </div>
 
         <div class="links">
-            <a href="https://github.com/Artem-od16/the-deployer" target="_blank" class="btn">
-                GitHub Repository
-            </a>
-            <a href="https://www.linkedin.com/in/artem-prysiazhnyi/" target="_blank" class="btn">
-                LinkedIn Profile
-            </a>
-            <a href="https://t.me/Im16Art" target="_blank" class="btn">
-                Telegram Contact
-            </a>
+            <a href="https://github.com/Artem-od16/" target="_blank" class="btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/artem-prysiazhnyi/" target="_blank" class="btn">LinkedIn</a>
+            <a href="https://t.me/Im16Art" target="_blank" class="btn">Telegram</a>
         </div>
-
-        <div class="separator"></div>
-        
-        <p style="color: var(--text-dim); margin-bottom: 2rem;">
-            Showcasing production-ready automation using AWS, Docker, and GitHub Actions.
-        </p>
 
         <div class="video-grid">
             <div class="video-item">
-                <p>Project: The Deployer</p>
+                <span class="video-title">Project: The Deployer</span>
                 <video controls>
                     <source src="The-Deployer presentation.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
+                <div class="tech-list">
+                    <span class="tech-tag">AWS EC2</span>
+                    <span class="tech-tag">Terraform</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Python Scripting</span>
+                    <span class="tech-tag">Nginx Proxy</span>
+                    <span class="tech-tag">GitHub Actions</span>
+                    <span class="tech-tag">Telegram Bot API</span>
+                </div>
             </div>
+
             <div class="video-item">
-                <p>Project: The Watchtower</p>
+                <span class="video-title">Project: The Watchtower</span>
                 <video controls>
                     <source src="The-Watchtower presentation.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
+                <div class="tech-list">
+                    <span class="tech-tag">AWS CLI (Zero-Click)</span>
+                    <span class="tech-tag">Linux Hardening</span>
+                    <span class="tech-tag">Bash Automation</span>
+                    <span class="tech-tag">Prometheus</span>
+                    <span class="tech-tag">Grafana</span>
+                    <span class="tech-tag">Systemd Services</span>
+                    <span class="tech-tag">Infrastructure Monitoring</span>
+                </div>
             </div>
         </div>
     </div>
