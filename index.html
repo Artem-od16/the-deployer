@@ -6,13 +6,14 @@
     <title>Artem Prysiazhnyi | DevOps Portfolio</title>
     <style>
         :root {
-            /* Deep Forest Palette - No pure white, no bright greens */
+            /* Forest Palette with higher contrast */
             --bg-base: #040a09;
-            --card-bg: #0a1614;
-            --forest-border: #1a2e2a;
-            --accent-muted: #27ae60; /* Darker, professional green */
-            --text-silver: #a0a8a7;
-            --text-dark-gray: #6b7675;
+            --card-bg: #0b1a18;
+            --forest-border: #1e3d37;
+            --accent-muted: #2ecc71; /* Brighter forest green */
+            --text-main: #f0f0f0;    /* High contrast white-gray */
+            --text-dim: #b0b8b7;     /* Readable silver */
+            --text-tags: #d1d8d7;    /* Bright text for technology labels */
             --btn-idle: #142623;
         }
 
@@ -25,14 +26,14 @@
             min-height: 100vh; 
             margin: 0;
             padding: 50px 20px;
-            color: var(--text-silver);
+            color: var(--text-main);
         }
         
         .card { 
             background: var(--card-bg); 
             padding: 3.5rem; 
             border-radius: 20px; 
-            box-shadow: 0 40px 100px rgba(0,0,0,0.8); 
+            box-shadow: 0 40px 100px rgba(0,0,0,0.9); 
             text-align: center;
             max-width: 1050px;
             width: 100%;
@@ -42,20 +43,21 @@
         .header-section { margin-bottom: 3rem; }
 
         h1 { 
-            color: var(--text-silver); 
+            color: var(--text-main); 
             margin: 0;
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             letter-spacing: -0.5px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .name-tag {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--accent-muted);
-            margin-top: 8px;
+            margin-top: 10px;
             display: block;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
+            font-weight: 700;
         }
 
         .links { 
@@ -68,21 +70,21 @@
 
         .btn {
             text-decoration: none;
-            padding: 12px 25px;
+            padding: 14px 30px;
             border-radius: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 1rem;
             transition: all 0.4s ease;
-            color: var(--text-silver);
+            color: var(--text-main);
             background: var(--btn-idle);
             border: 1px solid var(--forest-border);
         }
 
         .btn:hover { 
-            border-color: var(--accent-muted);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.1);
+            background: var(--accent-muted);
+            color: var(--bg-base);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.2);
         }
 
         .video-grid {
@@ -96,13 +98,13 @@
         }
 
         .video-title {
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text-silver);
-            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            font-size: 1.2rem;
             display: block;
-            border-left: 3px solid var(--accent-muted);
-            padding-left: 10px;
+            border-left: 4px solid var(--accent-muted);
+            padding-left: 12px;
         }
 
         video {
@@ -110,32 +112,34 @@
             border-radius: 12px;
             background: #000;
             border: 1px solid var(--forest-border);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* Tech Stack List */
         .tech-list {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
 
         .tech-tag {
-            font-size: 0.75rem;
-            background: rgba(39, 174, 96, 0.05);
-            color: var(--text-dark-gray);
-            padding: 4px 10px;
-            border-radius: 4px;
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-tags);
+            padding: 6px 12px;
+            border-radius: 6px;
             border: 1px solid var(--forest-border);
+            font-weight: 500;
             transition: 0.3s;
         }
 
         .tech-tag:hover {
-            color: var(--accent-muted);
             border-color: var(--accent-muted);
+            color: var(--accent-muted);
+            background: rgba(46, 204, 113, 0.1);
         }
 
         @media (max-width: 900px) {
@@ -162,6 +166,7 @@
                 <span class="video-title">Project: The Deployer</span>
                 <video controls>
                     <source src="The-Deployer presentation.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
                 </video>
                 <div class="tech-list">
                     <span class="tech-tag">AWS EC2</span>
@@ -178,6 +183,7 @@
                 <span class="video-title">Project: The Watchtower</span>
                 <video controls>
                     <source src="The-Watchtower presentation.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
                 </video>
                 <div class="tech-list">
                     <span class="tech-tag">AWS CLI (Zero-Click)</span>
